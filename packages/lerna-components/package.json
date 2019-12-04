@@ -22,6 +22,7 @@
   },
   "scripts": {
     "clean": "rimraf lib",
+    "prebuild": "npm run clean",
     "build": "babel ./src --out-dir lib --source-maps"
   },
   "bugs": {

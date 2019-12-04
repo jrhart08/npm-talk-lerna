@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import constant from 'lodash/constant';
 import noop from 'lodash/noop';
@@ -10,8 +10,25 @@ export const IdentityRenderer = ({ value }) => value;
  * Provides standard Select functionality, since dropdowns/tiles/choiceboxes
  * all have the same Select behavior.
  */
-export default Component => class Select extends React.PureComponent {
-  static propTypes = {
+export default (Component) => {
+  const Select = (props) => {
+    const handleChange = useCallback((option) => {
+      if (props.disabled || props.disableBy(option)) {
+        return;
+      }
+
+      // only trigger if value changes
+      if (!props.compareBy(option, props.value)) {
+        props.onChange(option);
+      } else if (props.nullable) {
+        props.onChange(undefined);
+      }
+    });
+
+    return <Component {...props} onChange={handleChange} />;
+  };
+
+  Select.propTypes = {
     /** select options (not configurator options) */
     options: PropTypes.array.isRequired,
     value: PropTypes.any, // eslint-disable-line react/forbid-prop-types
@@ -26,7 +43,7 @@ export default Component => class Select extends React.PureComponent {
     nullable: PropTypes.bool,
   };
 
-  static defaultProps = {
+  Select.defaultProps = {
     value: undefined,
     onChange: noop,
     // optionRenderer: IdentityRenderer,
@@ -37,18 +54,5 @@ export default Component => class Select extends React.PureComponent {
     nullable: false,
   };
 
-  handleChange = (option) => {
-    if (this.props.disabled || this.props.disableBy(option)) {
-      return;
-    }
-
-    // only trigger if value changes
-    if (!this.props.compareBy(option, this.props.value)) {
-      this.props.onChange(option);
-    } else if (this.props.nullable) {
-      this.props.onChange(undefined);
-    }
-  };
-
-  render = () => <Component {...this.props} onChange={this.handleChange} />;
+  return Select;
 };
