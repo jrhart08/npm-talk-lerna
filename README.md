@@ -109,5 +109,4 @@ and git add/commit it. Afterwards, run the following:
 npx lerna publish --registry=http://localhost:4873
 ```
 
-Lerna will check to see which packages were changed since the last publish and
-update/version them appropriately.
+Lerna will ask which kind of update you want, so select the appropriate one.

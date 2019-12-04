@@ -29,7 +29,10 @@
   },
   "homepage": "https://github.com/jrhart08/npm-talk-lerna#readme",
   "dependencies": {
-    "@jrh/lerna-hooks": "^2.0.1"
+    "@jrh/lerna-hooks": "^2.0.1",
+    "lodash": "^4.17.15",
+    "react": "^16.8.0",
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.4",
