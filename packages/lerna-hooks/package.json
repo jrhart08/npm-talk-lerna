@@ -8,9 +8,8 @@
   ],
   "scripts": {
     "clean": "rimraf lib",
-    "build": "babel ./src --out-dir ./lib --source-maps",
-    "release": "standard-version",
-    "prepublishOnly": "npm run clean && npm run build && npm run release"
+    "prebuild": "npm run clean",
+    "build": "babel ./src --out-dir ./lib --source-maps"
   },
   "repository": {
     "type": "git",
