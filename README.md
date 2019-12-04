@@ -101,9 +101,13 @@ From here we can get back to coding! Make a code change to the `lerna-hooks` pac
 and git add/commit it. Afterwards, run the following:
 
 ```bash
-# the --registry flag is needed here.
-# the lerna team made a conscious decision to
-# ignore local the .npmrc because reasons.
+# build our packages
+# `lerna run XYZ` will run the `XYZ` npm script for each package that has it
+npx lerna run build
+
+# The --registry flag is needed here.
+# The lerna team made a conscious decision to ignore local the .npmrc because reasons.
+# Alternatively, set the registry in `lerna.json`.
 
 # make sure your verdaccio server is running!
 npx lerna publish --registry=http://localhost:4873
