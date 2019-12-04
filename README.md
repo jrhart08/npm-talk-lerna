@@ -101,7 +101,12 @@ From here we can get back to coding! Make a code change to the `lerna-hooks` pac
 and git add/commit it. Afterwards, run the following:
 
 ```bash
-npx lerna publish
+# the --registry flag is needed here.
+# the lerna team made a conscious decision to
+# ignore local the .npmrc because reasons.
+
+# make sure your verdaccio server is running!
+npx lerna publish --registry=http://localhost:4873
 ```
 
 Lerna will check to see which packages were changed since the last publish and
