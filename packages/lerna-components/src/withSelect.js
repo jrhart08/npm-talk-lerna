@@ -18,7 +18,7 @@ export default (Component) => {
       }
 
       // only trigger if value changes
-      if (!props.compareBy(option, props.value)) {
+      if (option !== props.value) {
         props.onChange(option);
       } else if (props.nullable) {
         props.onChange(undefined);
@@ -37,7 +37,6 @@ export default (Component) => {
     // optionRenderer: PropTypes.func,
     keyBy: PropTypes.func,
     disableBy: PropTypes.func,
-    compareBy: PropTypes.func,
     /** component-level */
     disabled: PropTypes.bool,
     nullable: PropTypes.bool,
@@ -49,7 +48,6 @@ export default (Component) => {
     // optionRenderer: IdentityRenderer,
     keyBy: identity,
     disableBy: constant(false),
-    compareBy: (option, value) => option === value,
     disabled: false,
     nullable: false,
   };

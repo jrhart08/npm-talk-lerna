@@ -23,30 +23,16 @@
   "scripts": {
     "clean": "rimraf lib",
     "prebuild": "npm run clean",
-    "build": "babel ./src --out-dir lib --source-maps"
+    "build": "babel ./src --out-dir lib --source-maps  --root-mode upward"
   },
   "bugs": {
     "url": "https://github.com/jrhart08/npm-talk-lerna/issues"
   },
   "homepage": "https://github.com/jrhart08/npm-talk-lerna#readme",
   "dependencies": {
-    "@jrh/lerna-hooks": "^2.1.1",
+    "@jrh/lerna-hooks": "file:../lerna-hooks",
     "lodash": "^4.17.15",
     "react": "^16.8.0",
     "styled-components": "^4.4.1"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.7.4",
-    "@babel/core": "^7.7.4",
-    "@babel/preset-env": "^7.7.4",
-    "@babel/preset-react": "^7.7.4",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.7.2",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-lodash": "^6.0.0",
-    "eslint-plugin-react": "^7.17.0",
-    "rimraf": "^3.0.0"
   }
 }
