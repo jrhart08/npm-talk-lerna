@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/jrhart08/npm-talk-lerna/issues"
   },
-  "homepage": "https://github.com/jrhart08/npm-talk-lerna#readme"
+  "homepage": "https://github.com/jrhart08/npm-talk-lerna#readme",
+  "dependencies": {
+    "@jrh/lerna-hooks": "^1.2.1"
+  }
 }
