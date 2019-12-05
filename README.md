@@ -1,3 +1,30 @@
+# What Lerna does
+
+Lerna helps to streamline the development, versioning, and publishing of various
+closely-related NPM packages you're working on, all within 1 git repo.
+
+# When to use it
+
+Lerna is great when you're maintaining several packages that are closely related
+to each other. For instance, Babel now maintains dozens of closely-related NPM 
+packages (`@babel/cli`, `@babel/core`, `@babel/preset-react`, etc). It would
+be expensive, tedious, and prone to human error to manually link, update, and 
+publish related `@babel/` packages.
+
+
+However, Lerna is one more layer of abstraction and build tools between your
+source code and the packaged code you want to publish. This can add a learning
+curve and another barrier of entry to any developers wishing to contribute to
+your library.
+
+It's also pretty straightforward to port an existing repo into a Lerna monorepo
+(read further for a walkthrough). So if you're starting off with a standalone
+package, consider skipping Lerna at first.
+
+# Slow Start
+
+Lerna docs: https://github.com/lerna/lerna
+
 # Quick Start
 
 This repo contains a more complete example already, but you can easily do this
