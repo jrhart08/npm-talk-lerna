@@ -94,7 +94,50 @@ And if you look under `lerna-components/node_modules/` you'll see that
 Now we can install dependencies for our packages:
 
 ```bash
+# will npm-install each package's dependencies.
+# if one package we're managing is referencing another,
+# lerna will symlink them instead.
 npx lerna bootstrap
+
+# optionally, "hoist" each package's shared devDependencies up to the root package.json
+
+npx lerna link convert # alternatively: `npx lerna bootstrap --hoist`
+```
+
+Hoisting dependencies up to root level has a few advantages:
+
+1. It reduces `node_modules/` space usage and download time
+2. Since your Lerna packages are presumably related, you're likely wanting to
+   use the same babel/eslint/etc setups in each package.
+
+With your babel and eslint _versions_ synced, let's take it a step further and
+sync our babel and eslint config files as well. We can move a package's 
+`babel.config.js` and `.eslintrc.js` files up to the root level and delete the
+package-level config files so our folder structure looks like so:
+
+```
+my-lerna-repo/
+  packages/
+    lerna-hooks/
+      package.json
+    lerna-components/
+      package.json
+  .eslintrc.js
+  babel.config.js
+  package.json
+  lerna.json
+```
+
+Then in each package's `build` script (as defined in their `package.json` files)
+we can add a `--root-mode upward` flag to so babel knows to traverse upwards
+until it finds the `babel.config.js` file at the root of our repo:
+
+```json
+{
+  "scripts": {
+    "build": "babel ./src --out-dir lib --source-maps --root-mode upward"
+  }
+}
 ```
 
 From here we can get back to coding! Make a code change to the `lerna-hooks` package
