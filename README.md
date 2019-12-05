@@ -11,13 +11,16 @@ packages (`@babel/cli`, `@babel/core`, `@babel/preset-react`, etc). It would
 be expensive, tedious, and prone to human error to manually link, update, and 
 publish related `@babel/` packages.
 
-
 However, Lerna is one more layer of abstraction and build tools between your
 source code and the packaged code you want to publish. This can add a learning
 curve and another barrier of entry to any developers wishing to contribute to
 your library.
 
-It's also pretty straightforward to port an existing repo into a Lerna monorepo
+Additionally, as more packages are added to the repo, build times
+will increase and you'll have to contend with more developers working in the
+same codebase. Codeowners will also have an increased burden.
+
+It's pretty straightforward to port an existing repo into a Lerna monorepo
 (read further for a walkthrough). So if you're starting off with a standalone
 package, consider skipping Lerna at first.
 
