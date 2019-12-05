@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/jrhart08/npm-talk-lerna#readme",
   "dependencies": {
+    "@jrh/lerna-hocs": "file:..\\lerna-hocs",
     "@jrh/lerna-hooks": "file:../lerna-hooks",
     "lodash": "^4.17.15",
     "react": "^16.8.0",
