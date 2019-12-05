@@ -47,7 +47,7 @@ At this point, you have 2 ways of adding packages:
      your existing libraries)
 
 Let's do 1 of each. We'll create a new `@jrh/lerna-components` package and we'll
-port our existing `@jrh/lerna-hooks` project into this repo.
+port our existing `@jrh/react-hooks` project into this repo.
 
 **Step 1:** Create the new package:
 
@@ -76,7 +76,7 @@ We'll want our `lerna-components` project to reference `lerna-hooks`, so let's
 have lerna symlink it.
 
 ```bash
-npx lerna add @jrh/react-hooks --scope=@jrh/react-components
+npx lerna add @jrh/lerna-hooks --scope=@jrh/lerna-components
 ```
 
 Your `lerna-components/package.json` file should now look something like this:
