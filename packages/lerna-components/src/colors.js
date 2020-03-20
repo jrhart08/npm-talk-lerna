@@ -1,9 +1,0 @@
-export const celesteApprox = '#ccc';
-export const blazeOrangeApprox = 'rgb(249, 99, 2)';
-export const thdLink = '#3e7697';
-export const thdOrange = '#F96302';
-export const darkText = '#333';
-export const borderColor = '#999';
-export const darkGreen = '#00873c';
-export const black = '#000';
-export const white = '#fff';
