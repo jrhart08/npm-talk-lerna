@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@jrh/lerna-components": "file:packages\\lerna-components",
+    "@jrh/lerna-hocs": "file:packages\\lerna-hocs",
     "@jrh/lerna-hooks": "file:packages\\lerna-hooks"
   }
 }
