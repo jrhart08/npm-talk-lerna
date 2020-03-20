@@ -1,1 +1,1 @@
-{"version":3,"sources":["../src/index.js"],"names":[],"mappings":";;;;;;;;;;;;AAAA","sourcesContent":["export { default as withSelect } from './withSelect';\r\n"],"file":"index.js"}
+{"version":3,"sources":["../src/index.js"],"names":[],"mappings":";;;;;;;;;;;;AACA","sourcesContent":["/* eslint-disable import/prefer-default-export */\r\nexport { default as withSelect } from './withSelect';\r\n"],"file":"index.js"}
