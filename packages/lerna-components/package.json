@@ -32,7 +32,7 @@
   "dependencies": {
     "@jrh/lerna-hocs": "file:../lerna-hocs",
     "@jrh/lerna-hooks": "file:../lerna-hooks",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "react": "^16.8.0",
     "styled-components": "^4.4.1"
   }
